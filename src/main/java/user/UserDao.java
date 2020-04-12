@@ -24,7 +24,7 @@ public interface UserDao {
             email VARCHAR UNIQUE,
             gender VARCHAR NOT NULL,
             dob DATE NOT NULL,
-            enabled BIT NOT NULL
+            enabled BOOLEAN NOT NULL
         )
         """
     )

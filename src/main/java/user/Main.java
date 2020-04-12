@@ -24,6 +24,26 @@ public class Main {
                     .dob(LocalDate.parse("1920-11-11"))
                     .enabled(true)
                     .build();
+
+            User user1 = User.builder()
+                    .username("dont")
+                    .password("know")
+                    .name("Dont Know")
+                    .email("dont@know.com")
+                    .gender(User.Gender.FEMALE)
+                    .dob(LocalDate.parse("2020-04-12"))
+                    .enabled(true)
+                    .build();
+
+
+            dao.insert(user);
+            dao.insert(user1);
+            dao.list().stream().forEach(System.out::println);
+            System.out.println(dao.findById(1));
+            System.out.println(dao.findByUsername("dont"));
+            dao.delete(user1);
+            dao.list().stream().forEach(System.out::println);
+
         }
     }
 }
